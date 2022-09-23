@@ -1,0 +1,1 @@
+curl -s -X GET 'https://resto-test.c-scale.zcu.cz/search?startIndex=1&limit=500&lon=14.4&lat=50.1'  -H 'Accept: application/json' | jq '{"cloud_cover": .features[].properties["eo:cloud_cover"], "href": .features[].assets["safe-archive"].href}|select(.cloud_cover<0.3)'
